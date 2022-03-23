@@ -16,7 +16,7 @@ app.use(favicon(path.join(__dirname, 'build', 'favicon.ico')));
 app.use(express.static(path.join(__dirname, 'build')));
 
 // require all routes here: 
-
+app.use('/api/users', require('./routes/api/users'));
 // The following "catch all" route (note the *)is necessary
 // for a SPA's client-side routing to properly work
 app.get('/*', function(req, res) {
