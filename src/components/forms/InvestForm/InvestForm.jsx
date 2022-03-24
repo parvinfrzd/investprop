@@ -22,13 +22,22 @@ export default class InvestForm extends Component {
                 description: this.state.description, 
                 value: this.state.value,
             }
+            let fetchResponse = await fetch("/api/investments",{
+                method: "POST", 
+                headers: {"Content-Type": "application/json"},
+                body : JSON.stringify({name: this.state.name, description: this.state.description, value:this.state.value})
+            })
+            let serverResponse = await fetchResponse.json()
+            console.log("Success submitting investment:", serverResponse); 
+            this.setState({
+                name: '',
+                description: '',
+                value: '',
+            })
         }catch(e){
             console.log("Investment error", e)
-            this.setState({ error: 'Submit failed - Try Again' });
+            this.setState({ error: 'Submit failed' });
         }
-        console.log('An investment was submitted: ' + this.state.name);
-        console.log('An investment was submitted: ' + this.state.description);
-        console.log('An investment was submitted: ' + this.state.price);
     }
   
     render() {
