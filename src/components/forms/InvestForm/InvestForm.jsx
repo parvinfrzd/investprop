@@ -4,7 +4,8 @@ export default class InvestForm extends Component {
         name: '',
         description: '',
         value: '',
-        error: ''
+        error: '', 
+        investment : []
     };
   
     handleChange = (evt) => {
@@ -12,6 +13,17 @@ export default class InvestForm extends Component {
             [evt.target.name]: evt.target.value, 
             error: ''
             });
+    }
+
+    fetchInvestments = async () => {
+        try {
+            const jsonInvestments = await fetch('/api/investments')
+            let investmentRes = await jsonInvestments.json()
+            if (!jsonInvestments.ok) throw new Error("Couldn't fetch investments")
+            this.setState({ investment: investmentRes});
+        } catch (error) {
+            console.error('ERROR: ', error);
+        }
     }
   
     handleSubmit = async (evt) => {
@@ -34,11 +46,20 @@ export default class InvestForm extends Component {
                 description: '',
                 value: '',
             })
+            this.fetchInvestments();
         }catch(e){
             console.log("Investment error", e)
             this.setState({ error: 'Submit failed' });
         }
     }
+
+    
+
+    async componentDidMount() {
+        this.fetchInvestments();
+    }
+
+      
   
     render() {
       return (
@@ -53,7 +74,17 @@ export default class InvestForm extends Component {
 
                   <button type="submit">Submit</button>
               </form>
+              <div>
+                  {this.state.investment.length > 0 ? 
+                //   <p>We have investments!!</p>
+                    this.state.investment.map(inv =>  <li>key={inv.name}-----{inv.description}-----{inv.value}</li>)
+                  :
+                  <p>Add some investments!!</p>
+                  }
+              </div>
           </div>
+
+
 
       );
     }
