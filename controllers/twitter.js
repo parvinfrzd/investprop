@@ -43,29 +43,29 @@ function getLocation (input) {
     return location;
 }
 
-// let tweetArrays = []
-// async function searchTweets(req, res) {
-//     try {
-//         const location = getLocation(req.body.location)
-//         await client.get('search/tweets', { q: `#${req.body.hashtag1} since:2020-04-15`,geocode: `${location.lat},${location.lon},${parseInt(req.body.radius)}mi`, count: req.body.count }, function (err, data, response) {
-//             const results = data.statuses
-//             results.forEach(result => {
-//                 const tweet = {
-//                     text: result.text,
-//                     createdAt: result.created_at,
-//                     author: result.user.screen_name,
-//                     hashtags: `#${req.body.hashtag1}`
-//                 }
-//                 tweetArrays.push(tweet);
-//             });
-//             console.log(tweetArrays);
-//             res.status(200).json('ok');
-//         });
-//         res.status(200).json('ok');
-//     } catch(err) {
-//         res.status(400).json(err);
-//     }
-// }
+let tweetArrays = []
+async function searchTweets(req, res) {
+    try {
+        const location = getLocation(req.body.location)
+        await client.get('search/tweets', { q: `#${req.body.hashtag1} since:2020-04-15`,geocode: `${location.lat},${location.lon},${parseInt(req.body.radius)}mi`, count: req.body.count }, function (err, data, response) {
+            const results = data.statuses
+            results.forEach(result => {
+                const tweet = {
+                    text: result.text,
+                    createdAt: result.created_at,
+                    author: result.user.screen_name,
+                    hashtags: `#${req.body.hashtag1}`
+                }
+                tweetArrays.push(tweet);
+            });
+            console.log(tweetArrays);
+            res.status(200).json('ok');
+        });
+        res.status(200).json('ok');
+    } catch(err) {
+        res.status(400).json(err);
+    }
+}
 
 
 // async function indexTweets(req, res) {
