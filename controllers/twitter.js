@@ -15,33 +15,33 @@ let tweet = {
     hashtags: ''
 };
 
-// function getLocation (input) {
-//     let location; 
-//     switch(input) {
-//         case 'toronto': 
-//             location = {lat: 43.6534817, lon:-79.3839347}
-//         case 'losangeles':
-//             location = {lat: 34.0536909, lon:-118.242766}
-//         case 'sydney':
-//             location = {lat: 34.0536909, lon:-118.242766}
-//         case 'london':
-//             location = {lat: 51.5073219, lon:-0.1276474}
-//         case 'newdelhi':
-//             location = {lat: 28.6138954, lon:77.2090057}
-//         case 'berlin':
-//             location = {lat: 52.5186925, lon:13.3996024}
-//         case 'madrid':
-//             location = {lat: 40.4167047, lon:-3.7035825}
-//         case 'rome':
-//             location = {lat: 41.8933203, lon:12.4829321}
-//         case 'paris':
-//             location = {lat: 48.8588897, lon:2.320041}
-//         //default is toronto
-//         default: 
-//             location = {lat: 43.6534817, lon:-79.3839347}
-//     }
-//     return location;
-// }
+function getLocation (input) {
+    let location; 
+    switch(input) {
+        case 'toronto': 
+            location = {lat: 43.6534817, lon:-79.3839347}
+        case 'losangeles':
+            location = {lat: 34.0536909, lon:-118.242766}
+        case 'sydney':
+            location = {lat: 34.0536909, lon:-118.242766}
+        case 'london':
+            location = {lat: 51.5073219, lon:-0.1276474}
+        case 'newdelhi':
+            location = {lat: 28.6138954, lon:77.2090057}
+        case 'berlin':
+            location = {lat: 52.5186925, lon:13.3996024}
+        case 'madrid':
+            location = {lat: 40.4167047, lon:-3.7035825}
+        case 'rome':
+            location = {lat: 41.8933203, lon:12.4829321}
+        case 'paris':
+            location = {lat: 48.8588897, lon:2.320041}
+        //default is toronto
+        default: 
+            location = {lat: 43.6534817, lon:-79.3839347}
+    }
+    return location;
+}
 
 // let tweetArrays = []
 // async function searchTweets(req, res) {
