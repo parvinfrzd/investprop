@@ -16,14 +16,11 @@ async function create(req, res){
 
 async function index (req, res)  {
     try {
-        // 1. grab all items from DB, sorted by date descending (being fancy!)
         let investments = await InvestmentModel.find().exec();
-        console.log(investments);
-        // 2. send to frontend
         res.status(200).json(investments)         
-      } catch(err) {
+    } catch(err) {
         res.status(400).json(err);
-      }
+    }
 }
 
 module.exports = {
