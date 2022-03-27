@@ -8,12 +8,12 @@ var client = new Twit({
     access_token_secret: process.env.TWIT_ACCESS_TOKEN_SECRET,
 });
 
-// let tweet = {
-//     text:'',
-//     createdAt:'',
-//     author:'',
-//     hashtags: ''
-// };
+let tweet = {
+    text:'',
+    createdAt:'',
+    author:'',
+    hashtags: ''
+};
 
 // function getLocation (input) {
 //     let location; 
