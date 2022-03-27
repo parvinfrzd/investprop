@@ -68,16 +68,16 @@ async function searchTweets(req, res) {
 }
 
 
-// async function indexTweets(req, res) {
-//     try{
-//         let tweets = await tweetArrays;
-//         res.status(200).json(tweets);
-//     }catch(err){
-//         res.status(400).json(err);
-//     }
-// }
+async function indexTweets(req, res) {
+    try{
+        let tweets = await tweetArrays;
+        res.status(200).json(tweets);
+    }catch(err){
+        res.status(400).json(err);
+    }
+}
 
-// module.exports = {
-//     searchTweets, 
-//     indexTweets,
-// }
+module.exports = {
+    searchTweets, 
+    indexTweets,
+}
