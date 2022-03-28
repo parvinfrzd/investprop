@@ -66,7 +66,14 @@ export default function MarkPlaces() {
             }}
             />
         ))}
-        <></>
+        {selected ? (<InfoWindow position= {{lat: selected.lat, lng: selected.lng}} onCloseClick={() => {
+            setSelected(null);
+        }}>
+            <div>
+                <h2>There is a property marker saved!</h2>
+                <p>property saved at {formatRelative(selected.time, new Date())}</p>
+            </div>
+        </InfoWindow>) : null }
         </GoogleMap>
     ) : <></>
 }
