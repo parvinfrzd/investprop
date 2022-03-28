@@ -19,9 +19,10 @@ const options = {
 export default function MarkPlaces() {
     const { isLoaded } = useJsApiLoader({
         id: 'google-map-script',
-        googleMapsApiKey: 'apikey'
+        googleMapsApiKey: 'AIzaSyD25nhSCknaFgEaGulYOroERSuD87NWVeI'
     })
-
+    const [markers, setMarkers] = React.useState([]);
+    const [selected, setSelected] = React.useState(null);
     const [map, setMap] = React.useState(null)
 
     const onLoad = React.useCallback(function callback(map) {
@@ -34,48 +35,39 @@ export default function MarkPlaces() {
         setMap(null)
     }, [])
 
+    const onMapClick = React.useCallback ((event) => {setMarkers(current => [...current, {
+        lat: event.latLng.lat(),
+        lng: event.latLng.lng(), 
+        time: new Date(),
+    }])}, []);
+
+    const mapRef = React.useRef();
+
+    const onMapLoad = React.useCallback((map) => {
+        mapRef.current = map;
+    }, []);
+
     return isLoaded ? (
         <GoogleMap
         mapContainerStyle={mapContainerStyle}
         center={center}
-        zoom={10}
+        zoom={12}
         options={options}
-        onClick={(event) => {console.log(event)}}
+        onClick={onMapClick}
+        onLoad={onMapLoad}
         >
         { /* Child components, such as markers, info windows, etc. */ }
+        {markers.map((marker) => (
+        <Marker 
+            key={marker.time.toISOString()} 
+            position = {{lat: marker.lat, lng: marker.lng}}
+            onClick={() => {
+                setSelected(marker);
+            }}
+            />
+        ))}
         <></>
         </GoogleMap>
     ) : <></>
 }
 
-
-
-// const { isLoaded } = useJsApiLoader({
-//     id: 'google-map-script',
-//     googleMapsApiKey: process.env.GOOGLE_MAPS_API_KEY
-//   })
-
-//   const [map, setMap] = React.useState(null)
-
-//   const onLoad = React.useCallback(function callback(map) {
-//     const bounds = new window.google.maps.LatLngBounds();
-//     map.fitBounds(bounds);
-//     setMap(map)
-//   }, [])
-
-//   const onUnmount = React.useCallback(function callback(map) {
-//     setMap(null)
-//   }, [])
-
-//   return isLoaded ? (
-//       <GoogleMap
-//         mapContainerStyle={mapContainerStyle}
-//         center={center}
-//         zoom={10}
-//         onLoad={onLoad}
-//         onUnmount={onUnmount}
-//       >
-//         { /* Child components, such as markers, info windows, etc. */ }
-//         <></>
-//       </GoogleMap>
-//   ) : <></>
