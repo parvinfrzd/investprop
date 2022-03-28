@@ -1,4 +1,4 @@
-import { Component } from 'react';
+import React, { Component } from 'react';
 import './TwitterSearch.css'
 
 export default class TwitterSearch extends Component {

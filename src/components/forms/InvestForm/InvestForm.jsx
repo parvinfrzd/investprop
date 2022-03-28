@@ -1,4 +1,4 @@
-import { Component } from 'react';
+import React, { Component } from 'react';
 export default class InvestForm extends Component {
     state = {
         name: '',
