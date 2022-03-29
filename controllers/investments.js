@@ -6,6 +6,7 @@ async function create(req, res){
         await InvestmentModel.create({
             name: req.body.name, 
             description: req.body.description, 
+            address: req.body.address,
             value: parseInt(req.body.value)
         });
         res.status(200).json('ok')

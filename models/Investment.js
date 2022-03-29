@@ -4,6 +4,7 @@ const Schema = mongoose.Schema;
 const investmentSchema = new Schema({
   name: String, 
   description: String, 
+  address: String,
   value: Number
 }, {
   timestamps: true,
