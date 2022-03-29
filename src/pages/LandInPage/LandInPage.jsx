@@ -1,29 +1,21 @@
 import "./LandInPage.css"
 import React from 'react'
 import { Link } from 'react-router-dom';
-import UserLogOut from '../../components/UserLogOut/UserLogOut';
 import InvestForm from "../../components/forms/InvestForm/InvestForm";
 import TwitterSearch from "../../components/TwitterSearch/TwitterSearch";
 import MarkPlaces from "../../components/MarkPlaces/MarkPlaces";
+import InvestmentList from "../../components/InvestmentList/InvestmentList";
 class LandInPage extends React.Component {
-
-  // initial state of the app when it first loads
-  state = {
-    menuCategories: [],
-    activeCategory: "",
-    lineItems: [],
-    menuItems: [],
-  }
   
   render() {
     return (
-      <main className="LandInPage">
-        <nav className="nav">
-          <UserLogOut />
-        </nav>
-        <InvestForm/>
-        <TwitterSearch/>
-        <MarkPlaces/>
+      <main className="d-flex flex-column justify-content-around">
+        <div className="d-flex flex-row justify-content-around">
+          <InvestForm/>
+          <MarkPlaces/>
+        </div>
+        <InvestmentList/>
+        {/* <TwitterSearch/> */}
       </main>
     );
   }
