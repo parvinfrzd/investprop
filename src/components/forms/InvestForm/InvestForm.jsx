@@ -77,7 +77,7 @@ export default class InvestForm extends Component {
               <div>
                   {this.state.investment.length > 0 ? 
                 //   <p>We have investments!!</p>
-                    this.state.investment.map(inv =>  <li>key={inv._id}------{inv.name}-----{inv.description}-----{inv.value}</li>)
+                    this.state.investment.map(inv =>  <li>{inv.name}-----{inv.description}-----{inv.value}</li>)
                   :
                   <p>Add some investments!!</p>
                   }
