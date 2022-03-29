@@ -1,0 +1,26 @@
+.card-block {
+  min-height: 300px;
+}
+
+.scrolling-wrapper {
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+}
+
+.scrolling-wrapper .card {
+  display: inline-block;
+  width: 500px;
+  margin: 20px;
+}
+
+.card-text {
+  word-wrap: break-word;
+}
+.list-card {
+  margin: 55px;
+}
+
+.list-card-title {
+  margin-left: 20px;
+}
