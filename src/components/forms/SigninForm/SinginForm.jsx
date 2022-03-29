@@ -41,15 +41,18 @@ export default class SigninForm extends Component {
   render() {
     return (
       <div>
-        <div className="form-container" onSubmit={this.handleSubmit}>
-          <form autoComplete="off" >
-            <label>Email</label>
-            <input type="text" name="email" value={this.state.email} onChange={this.handleChange} required />
-            <label>Password</label>
-            <input type="password" name="password" value={this.state.password} onChange={this.handleChange} required />
-            <button type="submit">LOG IN</button>
+          <form autoComplete="off" onSubmit={this.handleSubmit}>
+            <div className="form-group">
+              <label for="exampleInputEmail1">Email</label>
+              <input className='form-control' aria-describedby="emailHelp" placeholder="Enter email" type="text" name="email" value={this.state.email} onChange={this.handleChange} required />
+              <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Password</label>
+              <input type="password" className="form-control" id="exampleInputPassword1" placeholder="Password" name="password" value={this.state.password} onChange={this.handleChange} required />
+            </div>
+            <button type="submit" className="btn btn-primary">LOG IN</button>
           </form>
-        </div>
         <p className="error-message">&nbsp;{this.state.error}</p>
       </div>
     );
