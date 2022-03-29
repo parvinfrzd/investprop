@@ -1,16 +1,14 @@
 import React from 'react';
+import { Button, Navbar, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
+
 import './UserLogOut.css'
 
-class UserLogOut extends React.Component {
-  render() {
+export default function UserLogOut (props){
   return (
       <div className='UserLogOut'>
-        <div>Name: ??</div>
-        <div>Email: ??</div>
-        <button className="btn-sm">Logout</button>
+        {/* <div>Name: {props.name}</div>
+        <div>Email: {props.email}</div> */}
+        <Button className="btn-sm" variant="dark" onClick={()=>{props.logoutUser()}} >Logout</Button>
       </div>
   );
-  }
 }
-
-export default UserLogOut;
