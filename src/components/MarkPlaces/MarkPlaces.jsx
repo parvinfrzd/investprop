@@ -6,11 +6,13 @@ import usePlacesAutoComplete, { getGeocode, getLatLng } from "use-places-autocom
 import "@reach/combobox/styles.css";
 import mapStyles from './mapStyles';
 
+import InvestForm from '../../components/forms/InvestForm/InvestForm'
+
 const libraries = ['places']
 
 const mapContainerStyle = {
-    width: '100vw', 
-    height: '100vh'
+    width: '900px', 
+    height: '500px'
 }
 const center = {
     lat: 43.653225,
@@ -61,43 +63,35 @@ export default function MarkPlaces() {
     }, []);
 
     return isLoaded ? (
-        <div>
-            <Search panTo={panTo}/>
-            <GoogleMap
-            mapContainerStyle={mapContainerStyle}
-            center={center}
-            zoom={12}
-            options={options}
-            onClick={onMapClick}
-            onLoad={onMapLoad}
-            >
-            { /* Child components, such as markers, info windows, etc. */ }
-            {markers.map((marker) => (
-            <Marker 
-                key={marker.time.toISOString()} 
-                position = {{lat: marker.lat, lng: marker.lng}}
-                onClick={() => {
-                    setSelected(marker);
-                }}
-                />
-            ))}
-            {selected ? (<InfoWindow position= {{lat: selected.lat, lng: selected.lng}} onCloseClick={() => {
-                setSelected(null);
-            }}>
-                <div>
-                    <form autoComplete="off" >
-                        <label>Email</label>
-                        <input type="text" name="email" />
-                        <label>Password</label>
-                        <input type="password" name="password"  />
-                        <button type="submit">LOG IN</button>
-                    </form>
-                    <h2>There is a property marker saved!</h2>
-                    <p>property saved at {formatRelative(selected.time, new Date())}</p>
+            <div className="card" >
+                 <div class="card-body">
+                    <Search panTo={panTo}/>
+                    <GoogleMap
+                    mapContainerStyle={mapContainerStyle}
+                    center={center}
+                    zoom={12}
+                    options={options}
+                    onClick={onMapClick}
+                    onLoad={onMapLoad}
+                    >
+                    { /* Child components, such as markers, info windows, etc. */ }
+                    {markers.map((marker) => (
+                    <Marker 
+                        key={marker.time.toISOString()} 
+                        position = {{lat: marker.lat, lng: marker.lng}}
+                        onClick={() => {
+                            setSelected(marker);
+                        }}
+                        />
+                    ))}
+                    {selected ? (<InfoWindow position= {{lat: selected.lat, lng: selected.lng}} onCloseClick={() => {
+                        setSelected(null);
+                    }}>
+                        <InvestForm/>
+                    </InfoWindow>) : null }
+                    </GoogleMap>
                 </div>
-            </InfoWindow>) : null }
-            </GoogleMap>
-        </div>
+            </div>
     ) : <></>
 }
 
