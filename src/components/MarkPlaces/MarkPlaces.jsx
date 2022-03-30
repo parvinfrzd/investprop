@@ -1,7 +1,7 @@
 import React from 'react'; 
 import {GoogleMap, useLoadScript,useJsApiLoader, Marker, InfoWindow} from '@react-google-maps/api'; 
 import {formatRelative} from 'date-fns';
-import {Combobox,ComboboxInput,ComboboxPopover,ComboboxList,ComboboxOption,ComboboxOptionText,} from "@reach/combobox";
+import {Combobox,ComboboxInput,ComboboxPopover,ComboboxOption,} from "@reach/combobox";
 import usePlacesAutoComplete, { getGeocode, getLatLng } from "use-places-autocomplete"; 
 import "@reach/combobox/styles.css";
 import mapStyles from './mapStyles';
@@ -33,17 +33,7 @@ export default function MarkPlaces() {
     })
     const [markers, setMarkers] = React.useState([]);
     const [selected, setSelected] = React.useState(null);
-    const [map, setMap] = React.useState(null)
-
-    const onLoad = React.useCallback(function callback(map) {
-        const bounds = new window.google.maps.LatLngBounds();
-        map.fitBounds(bounds);
-        setMap(map)
-    }, [])
-
-    const onUnmount = React.useCallback(function callback(map) {
-        setMap(null)
-    }, [])
+    const [map, setMap] = React.useState(null);
 
     const onMapClick = React.useCallback ((event) => {setMarkers(current => [...current, {
         lat: event.latLng.lat(),
