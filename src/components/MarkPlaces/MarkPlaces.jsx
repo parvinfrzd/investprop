@@ -1,4 +1,4 @@
-import React from 'react'; 
+import React, {useEffect} from 'react'; 
 import {GoogleMap, useLoadScript,useJsApiLoader, Marker, InfoWindow} from '@react-google-maps/api'; 
 import {formatRelative} from 'date-fns';
 import {Combobox,ComboboxInput,ComboboxPopover,ComboboxOption,} from "@reach/combobox";
@@ -28,7 +28,7 @@ const options = {
 export default function MarkPlaces() {
     const { isLoaded, loadError } = useLoadScript({
         id: 'google-map-script',
-        googleMapsApiKey: process.env.GOOGLE_MAPS_API_KEY, 
+        googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY, 
         libraries,
     })
     const [markers, setMarkers] = React.useState([]);
