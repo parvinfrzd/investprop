@@ -1,8 +1,10 @@
 import './InvestmentList.css';
-import React, { Component } from 'react';
-
-
+import React, { Component,createContext } from 'react';
+import InvestmentContext from '../../InvestmentContext';
+import { InvestmentConsumer } from '../../InvestmentContext';
 export default class InvestmentList extends Component {
+    static contextType = InvestmentContext
+
     state = {
        investments: []
     }
@@ -22,7 +24,15 @@ export default class InvestmentList extends Component {
         this.fetchInvestments();
     }
     render() {
-        return (
+
+        return ( 
+
+            // <InvestmentConsumer>
+            //     {value => value ? <h1>there are {value.length} investments</h1> 
+            //     : 
+            //     <h1>there is no investment</h1>
+            //     }
+            // </InvestmentConsumer>
             <div className="card list-card">
                 <br/>
                 <h1 class="list-card-title">List of investments:</h1>
@@ -30,6 +40,7 @@ export default class InvestmentList extends Component {
                     {this.state.investments.length > 0 ? 
                         this.state.investments.map(inv =>  
                             <div className="card">
+                                <img class="card-img-top" src="/images/placeholder.png" alt="Card image cap"/>
                                 <div class="card-body">
                                     <h3 class="card-title">{inv.name}</h3>
                                     <br/>
