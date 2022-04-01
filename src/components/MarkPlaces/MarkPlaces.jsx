@@ -11,8 +11,8 @@ import InvestForm from '../../components/forms/InvestForm/InvestForm'
 const libraries = ['places']
 
 const mapContainerStyle = {
-    width: '900px', 
-    height: '500px'
+    width: '1300px', 
+    height: '600px'
 }
 const center = {
     lat: 43.653225,
