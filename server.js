@@ -21,6 +21,7 @@ if (process.env.NODE_ENV === 'production' || process.env.PREVIEW === 'true'){
 app.use('/api/users', require('./routes/api/users'));
 app.use('/api/investments', require('./routes/api/investments'));
 app.use('/api/twitter', require('./routes/api/twitter'));
+app.use('/api/searchInvestment', require('./routes/api/searchInvestment'));
 
 // The following "catch all" route (note the *)is necessary
 // for a SPA's client-side routing to properly work
