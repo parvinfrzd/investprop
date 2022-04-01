@@ -54,7 +54,8 @@ async function searchTweets(req, res) {
                     text: result.text,
                     createdAt: result.created_at,
                     author: result.user.screen_name,
-                    hashtags: `#${req.body.hashtag1}`
+                    hashtags: `#${req.body.hashtag1}`,
+                    userUrl: result.user.url
                 }
                 tweetArrays.push(tweet);
             });
@@ -72,6 +73,7 @@ async function indexTweets(req, res) {
     try{
         let tweets = await tweetArrays;
         res.status(200).json(tweets);
+        tweetArrays = [];
     }catch(err){
         res.status(400).json(err);
     }
