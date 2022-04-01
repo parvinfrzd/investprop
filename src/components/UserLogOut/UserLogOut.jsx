@@ -5,9 +5,8 @@ import './UserLogOut.css'
 
 export default function UserLogOut (props){
   return (
-      <div className='UserLogOut'>
-        {/* <div>Name: {props.name}</div>
-        <div>Email: {props.email}</div> */}
+      <div className='d-flex '>
+        <h5 className="text-justify">Hello {props.name}!</h5>
         <Button className="btn-sm" variant="dark" onClick={()=>{props.logoutUser()}} >Logout</Button>
       </div>
   );
