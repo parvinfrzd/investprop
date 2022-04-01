@@ -1,0 +1,15 @@
+.ScrollStyle {
+  margin: 10px;
+  max-height: 100vh;
+  max-width: 800px;
+  overflow-y: scroll;
+}
+
+.twit-card-list {
+  margin-top: 20px;
+  width: 862px;
+}
+
+.twit-card {
+  margin: 10px;
+}
