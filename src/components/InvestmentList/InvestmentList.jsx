@@ -49,7 +49,7 @@ export default class InvestmentList extends Component {
                                     <h6 class="card-subtitle mb-2 text-muted">Address:</h6>
                                     <p class="card-text">{inv.address}</p>
                                     <h4 class="card-title">Price:</h4>
-                                    <h5 class="card-title">$${inv.value}</h5>
+                                    <h5 class="card-title">$ {inv.value}.00</h5>
 
                                 </div>
                             </div>)
