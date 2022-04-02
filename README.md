@@ -14,6 +14,17 @@
 <br>
 
 ## Wireframe and UI: 
+<br>
+
+![alt text](https://github.com/parvinfrzd/investprop/blob/master/public/images/dashboard.png?raw=true)
+
+<br>
+
+![alt text](https://github.com/parvinfrzd/investprop/blob/master/public/images/twitterapi.png?raw=true)
+
+<br>
+
+![alt text](https://github.com/parvinfrzd/investprop/blob/master/public/images/listinvestment.png?raw=true)
 
 <br>
 
