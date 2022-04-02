@@ -1,70 +1,47 @@
-# Getting Started with Create React App
+# Investprop
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+#### Work in progress application [link](https://investpropp.herokuapp.com/).
+<br>
 
-## Available Scripts
+![alt text](https://github.com/parvinfrzd/investprop/blob/master/public/images/screenshot.png?raw=true)
 
-In the project directory, you can run:
+## [Trello Board](https://trello.com/b/pYSP0ACO/investprop)
 
-### `npm start`
+<br>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## [Entity Relationship Diagram](https://app.diagrams.net/#G1_l1QXBHS9e3-sZV1gEEONzGBQYxps8wc)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+<br>
 
-### `npm test`
+## Wireframe and UI: 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<br>
 
-### `npm run build`
+## Technologies: 
+### Programing languages: Javascript, JSX, HTML, CSS
+### Frameworks: React, Express, Node.js, React Bootstrap, Boostrap
+### Database: MongoDB, Mongoose 
+### API: AJAX server side, Twitter API
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<br>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Icebox: 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+I aimed to make an application that performs as a platform for both investors and promoters to connect with each other, follow and discuss the new trends. As well as for promoters/investors to list the investments. Investors are able to follow up per listing, invest, and track their money. 
 
-### `npm run eject`
+There was also the idea of having an e-wallet per user. As an investor, the user could deposit credit into their wallet in one of the selected currencies, and invest via that platform. 
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Considering the fact that I didn't have enough time, I decided to go with the minimal viable product. I made a simple user investment model that consumes the Google Maps API to visualise the location. Feeding news based on location and hashtag was an incoming API from Twitter.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<br>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## References: 
+#### Some of the useful links I came to encounter while developing this application: 
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+[Build interactive google api](https://www.youtube.com/watch?v=Pf7g32CwX_s)
 
-## Learn More
+[Introduction to react hooks](https://www.youtube.com/watch?v=mxK8b99iJTg)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+[How to use context data](https://www.youtube.com/watch?v=FzlurzsCW4M&list=PL8fumNHsC-3O0iQ_KP2Gz5f8ib2jP5rPv&index=57)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
