@@ -7,7 +7,7 @@ class LandInPage extends React.Component {
   
   render() {
     return (
-      <main className="d-flex flex-column justify-content-around">
+      <main className="d-flex flex-column justify-content-around landin">
         <div className="d-flex flex-row justify-content-around">
           <InvestForm/>
           <MarkPlaces/>
