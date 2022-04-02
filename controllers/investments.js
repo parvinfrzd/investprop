@@ -1,7 +1,6 @@
 const InvestmentModel = require('../models/Investment');
 
 async function create(req, res){ 
-    console.log('request body is',req.body);
     try {
         await InvestmentModel.create({
             name: req.body.name, 
