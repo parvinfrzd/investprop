@@ -23,22 +23,18 @@ class App extends Component {
   }
 
   setUserInState = (incomingUserData) => {
-    this.setState({ user: incomingUserData })
-
+    this.setState({ user: incomingUserData,username: incomingUserData.name, useremail: incomingUserData.email })
   }
-  componentDidMount() {
+
+  componentDidMount = async () => {
     let token = localStorage.getItem('token')
     if (token) {
-      let userDoc = JSON.parse(atob(token.split('.')[1])).user // decode jwt token
-      this.setState({user: userDoc, username: userDoc.name, useremail: userDoc.email}) 
-      console.log(this.user)  
-   
+      let userDoc = await JSON.parse(atob(token.split('.')[1])).user // decode jwt token
+      this.setState({user: userDoc, username: userDoc.name, useremail: userDoc.email})    
     }
   }
 
   userLogOut = () => {
-    let token = localStorage.getItem('token');
-    token = null;
     localStorage.removeItem('token');
     this.setState({user: null})      
   }
@@ -50,14 +46,15 @@ class App extends Component {
               <Navbar className='container-fluid' expand="lg" bg="dark" variant="dark">
               {/* <Container> */}
               <Nav className="me-auto">
-                <Navbar.Brand href="#home">InvestProp</Navbar.Brand>
+                <Navbar.Brand href="#home"><h4 className="linkText">Investprop</h4></Navbar.Brand>
+                <Nav.Link href="#" ><h5 className="linkText">Hello {this.state.username}</h5></Nav.Link>
                 <Nav.Link href="/">My Dashboard</Nav.Link>
                 <Nav.Link href="/twits">Search News</Nav.Link>
                 <Nav.Link href="/invests">View all investments</Nav.Link>
               </Nav>
               <br></br><br></br>
               <Nav>
-                <UserLogOut name={this.state.username} logoutUser={this.userLogOut}/>
+                <UserLogOut logoutUser={this.userLogOut}/>
               </Nav>
               {/* </Container> */}
 
