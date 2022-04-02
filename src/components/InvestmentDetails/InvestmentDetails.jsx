@@ -55,10 +55,11 @@ export default class InvestmentDetails extends Component {
                 <br></br>
                 <form className="form-inline" onSubmit={this.handleSubmit}>
                     <div class="form-group">
-                        <label className="form-label" for="form5Example1">Name:</label>
-                        <input type="text" className="form-control" placeholder="Name" name="name" value={this.state.name} onChange={this.handleChange}/>
+                        <label className="form-label search-label" for="form5Example1">Search by name:</label>
+                        <br></br>
+                        <input type="text" className="form-control search-control" placeholder="Name" name="name" value={this.state.name} onChange={this.handleChange}/>
                     </div>
-                    <button type="submit" className="btn btn-primary mb-2">Search</button>
+                    <button type="submit" className="btn btn-primary">Search</button>
                 </form>
                 <br/>
             <div className="InvestScrollStyle">
@@ -77,7 +78,7 @@ export default class InvestmentDetails extends Component {
                                     <h6 class="card-subtitle mb-2 text-muted">Address:</h6>
                                     <p class="card-text">{inv.address}</p>
                                     <h4 class="card-title">Price:</h4>
-                                    <h5 class="card-title">$${inv.value}</h5>
+                                    <h5 class="card-title">$ {inv.value}.00</h5>
 
                                 </div>
                             </div>

@@ -16,3 +16,11 @@
   margin: auto;
   transform: translateX(35%);
 }
+
+.search-label {
+  margin-right: 10px;
+}
+
+.search-control {
+  margin-right: 10px;
+}
