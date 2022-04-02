@@ -134,7 +134,7 @@ export default class TwitterSearch extends Component {
                                     <div class="card-body">
                                         <h5 class="card-title">{tweet.text}</h5>
                                         <p class="card-text">{tweet.createdAt}</p>
-                                        <a href={tweet.userUrl} class="btn btn-primary">Useful URL</a>
+                                        <a href={tweet.userUrl} target="_blank" className="btn btn-primary">Useful URL</a>
                                     </div>
                                 </div>
                                 )
