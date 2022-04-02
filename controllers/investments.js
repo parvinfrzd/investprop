@@ -17,7 +17,7 @@ async function create(req, res){
 
 async function index (req, res)  {
     try {
-        let investments = await InvestmentModel.find().exec();
+        let investments = await InvestmentModel.find().sort({createdAt:'desc'}).exec();
         res.status(200).json(investments)         
     } catch(err) {
         res.status(400).json(err);
